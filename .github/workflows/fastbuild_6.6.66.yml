@@ -343,8 +343,8 @@ jobs:
           elif [[ ${{ github.event.inputs.ksu_type }} == "ksu" ]]; then
             echo "Configuring original KernelSU (tiann/KernelSU)..."
             if [[ "${{ github.event.inputs.susfs_enable }}" == "true" ]]; then
-              echo "Testing tiann/KernelSU 32485 with SUSFS; pinning 3f388ef..."
-              curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/refs/heads/main/kernel/setup.sh" | bash -s 3f388ef137c78e1ca0c92c0ada3b8717cdcc4302
+              echo "SUSFS is not yet compatible with latest tiann/KernelSU; pinning known-good f9c7823..."
+              curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/refs/heads/main/kernel/setup.sh" | bash -s f9c7823e3e9a6034c236a3b275132878cbae7f9f
             else
               curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/refs/heads/main/kernel/setup.sh" | bash -s main
             fi
